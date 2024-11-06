@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kesara Lakpriya | Data Scientist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            100: '#E6F6FF',
+                            500: '#3B82F6',
+                            900: '#1E3A8A'
+                        }
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Styles -->
+    <style type="text/tailwindcss">
+        @layer components {
+            .skill-bar {
+                @apply relative h-2 bg-gray-700 rounded-full mt-1 overflow-hidden;
+            }
+            .skill-progress {
+                @apply absolute top-0 left-0 h-full rounded-full transition-all duration-1000;
+            }
+            .nav-link {
+                @apply hover:text-blue-400 transition-colors duration-300 relative;
+            }
+            .nav-link::after {
+                @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300;
+            }
+            .nav-link:hover::after {
+                @apply w-full;
+            }
+            .project-card {
+                @apply bg-gray-800 rounded-lg p-6 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:scale-105;
+            }
+            .terminal-text {
+                @apply font-mono text-sm text-gray-300;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-gray-800/90 backdrop-blur-lg z-50 border-b border-gray-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                    KL42
+                </div>
+                <div class="flex space-x-8">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="min-h-screen flex items-center justify-center pt-16 px-4">
+        <div class="text-center max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent animate-gradient">
+                Kesara Lakpriya
+            </h1>
+            <p class="text-xl text-gray-400 mb-8">Data Scientist & Problem Solver</p>
+            <p>
+               Kesara Lakpriya is a driven Data Science undergraduate at SLTC Research University in Sri Lanka, <br>
+               set to complete his BSc (Hons) in 2025. With a strong foundation in data analysis, visualization, <br>
+               and machine learning, Kesara is passionate about using data to solve real-world problems.
+           </p>
+            <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700/50 backdrop-blur-sm max-w-2xl mx-auto text-left">
+                <div class="terminal-text">
+                    <span class="text-green-400">➜</span>
+                    <span class="text-blue-400">~</span>
+                    <span class="typing-text"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Dashboard -->
+    <section id="skills" class="py-20 bg-gray-800/50 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Technical Arsenal
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Data Science Skills -->
+                <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-6 text-blue-400">Data Science</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-300">Python</span>
+                                <span class="text-sm text-gray-400">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress bg-blue-500" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-300">R</span>
+                                <span class="text-sm text-gray-400">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress bg-blue-500" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development Skills -->
+                <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-6 text-purple-400">Web Development</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-300">JavaScript</span>
+                                <span class="text-sm text-gray-400">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress bg-purple-500" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-300">HTML/CSS</span>
+                                <span class="text-sm text-gray-400">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress bg-purple-500" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50 backdrop-blur-sm hover:border-green-500/50 transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-6 text-green-400">Tools</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-300">AWS</span>
+                                <span class="text-sm text-gray-400">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress bg-green-500" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-300">Power BI</span>
+                                <span class="text-sm text-gray-400">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress bg-green-500" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Featured Projects
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Urban Tour -->
+                <div class="project-card">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-blue-400">Urban Tour</h3>
+                        <div class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">Featured</div>
+                    </div>
+                    <p class="text-gray-400 mb-4">Transportation solution during fuel crisis with automated quota system</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-gray-700/50 px-3 py-1 rounded-full">AWS</span>
+                        <span class="text-xs bg-gray-700/50 px-3 py-1 rounded-full">Python</span>
+                        <span class="text-xs bg-gray-700/50 px-3 py-1 rounded-full">OpenCV</span>
+                    </div>
+                </div>
+
+                <!-- AR Anatomy -->
+                <div class="project-card">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-purple-400">AR Anatomy</h3>
+                        <div class="text-xs bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full">Educational</div>
+                    </div>
+                    <p class="text-gray-400 mb-4">Interactive AR display for human anatomy education</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-gray-700/50 px-3 py-1 rounded-full">Unity</span>
+                        <span class="text-xs bg-gray-700/50 px-3 py-1 rounded-full">AR</span>
+                        <span class="text-xs bg-gray-700/50 px-3 py-1 rounded-full">3D</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Typing animation
+        const texts = [
+            "class Kesara {",
+            "  role = 'Data Scientist'",
+            "  passion = ['AI', 'Analytics', 'Problem Solving']",
+            "  status = 'Creating impact through data'",
+            "}"
+        ];
+        
+        let lineIndex = 0;
+        let charIndex = 0;
+        const typingText = document.querySelector('.typing-text');
+        
+        function type() {
+            if (lineIndex < texts.length) {
+                if (charIndex < texts[lineIndex].length) {
+                    typingText.textContent += texts[lineIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, 50);
+                } else {
+                    typingText.innerHTML += '<br>➜ ';
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(type, 500);
+                }
+            }
+        }
+
+        // Initialize animations
+        window.onload = () => {
+            type();
+            
+            // Animate skill bars
+            gsap.from('.skill-progress', {
+                width: 0,
+                duration: 1.5,
+                ease: 'power2.out',
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: '#skills',
+                    start: 'top center'
+                }
+            });
+        };
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
